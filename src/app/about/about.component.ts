@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import jordan from '../images/jordan.png';
+import jonathan from '../images/jonathan.jpg';
 
 @Component({
   selector: 'app-about',
@@ -11,12 +12,16 @@ export class AboutComponent implements OnInit {
   constructor() { 
     this.team = [
       {
-        name: "Jonathan",
-        url: jordan
+        name: "Jordan",
+        url: jordan,
+        title: "Full Stack Developer",
+        quote: "I love chicken nuggets!"
       },
       {
-        name: "Jordan",
-        url: jordan
+        name: "Jonathan",
+        url: jonathan,
+        title: "Full Stack Developer",
+        quote: "Big Papa Ho"
       }
     ]
   }

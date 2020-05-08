@@ -8,9 +8,10 @@ import { AboutComponent } from './about/about.component';
 import { AccountModule } from './account/account.module';
 import { BudgetsModule } from './budgets/budgets.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PersonComponent } from './about/person/person.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, AboutComponent],
+  declarations: [AppComponent, HomeComponent, AboutComponent, PersonComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot([

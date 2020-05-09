@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonComponent } from './about/person/person.component';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const accountModule = () =>
   import('./account/account.module').then((x) => x.AccountModule);
@@ -28,6 +29,7 @@ const accountModule = () =>
     BudgetsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
+    MatGridListModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

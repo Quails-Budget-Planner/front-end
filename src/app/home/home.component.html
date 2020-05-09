@@ -1,1 +1,12 @@
-<p>home works!</p>
+<mat-grid-list cols="3" rowHeight="300px">
+  <mat-grid-tile
+    class="tile"
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+  >
+    <div class="header">{{ tile.header }}</div>
+    <div class="text">{{ tile.text }}</div>
+    <img [src]="tile.imageURL" />
+  </mat-grid-tile>
+</mat-grid-list>

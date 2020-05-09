@@ -10,7 +10,11 @@ import { BudgetsModule } from './budgets/budgets.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonComponent } from './about/person/person.component';
 
-const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
+import { MatToolbarModule } from '@angular/material/toolbar';
+
+const accountModule = () =>
+  import('./account/account.module').then((x) => x.AccountModule);
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, PersonComponent],
   imports: [
@@ -18,11 +22,12 @@ const accountModule = () => import('./account/account.module').then(x => x.Accou
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'auth', loadChildren: accountModule }
+      { path: 'auth', loadChildren: accountModule },
     ]),
     // AccountModule,
     BudgetsModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

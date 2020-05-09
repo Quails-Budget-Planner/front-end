@@ -22,7 +22,7 @@ const accountModule = () =>
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'auth', loadChildren: accountModule },
+      { path: '', loadChildren: accountModule },
     ]),
     // AccountModule,
     BudgetsModule,

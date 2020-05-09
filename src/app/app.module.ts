@@ -13,9 +13,6 @@ import { PersonComponent } from './about/person/person.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-// const accountModule = () =>
-//   import('./account/account.module').then((x) => x.AccountModule);
-
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, PersonComponent],
   imports: [
@@ -23,7 +20,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      // { path: 'auth', loadChildren: accountModule },
     ]),
     AccountModule,
     BudgetsModule,

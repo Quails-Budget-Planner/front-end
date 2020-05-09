@@ -1,1 +1,10 @@
-<p>about works!</p>
+<h2>Meet the Team</h2>
+<div class="container">
+  <app-person *ngFor="let person of team" [person]="person"></app-person>
+</div>
+<hr />
+<div>
+  <p>Jonathan and Jordan are Lambda School graduates. They built many applications together, such as Quality Hub and Create Your Own Adventure. This application is built with Angular, Express and DynamoDB. 
+    The two wanted to explore different web development technologies and apply their knowledge of AWS.
+  </p>
+</div>

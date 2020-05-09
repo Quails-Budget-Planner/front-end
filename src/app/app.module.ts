@@ -20,7 +20,6 @@ import { MatGridListModule } from '@angular/material/grid-list';
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      // { path: '', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
     ]),
     AccountModule,
     BudgetsModule,

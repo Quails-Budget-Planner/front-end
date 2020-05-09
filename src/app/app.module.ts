@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-// import { AccountModule } from './account/account.module';
+import { AccountModule } from './account/account.module';
 import { BudgetsModule } from './budgets/budgets.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonComponent } from './about/person/person.component';
@@ -13,8 +13,8 @@ import { PersonComponent } from './about/person/person.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-const accountModule = () =>
-  import('./account/account.module').then((x) => x.AccountModule);
+// const accountModule = () =>
+//   import('./account/account.module').then((x) => x.AccountModule);
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent, PersonComponent],
@@ -23,9 +23,9 @@ const accountModule = () =>
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'about', component: AboutComponent },
-      { path: 'auth', loadChildren: accountModule },
+      // { path: 'auth', loadChildren: accountModule },
     ]),
-    // AccountModule,
+    AccountModule,
     BudgetsModule,
     BrowserAnimationsModule,
     MatToolbarModule,

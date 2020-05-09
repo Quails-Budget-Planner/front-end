@@ -1,14 +1,19 @@
-<div>
-  <mat-form-field>
-    <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="name">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Username</mat-label>
-    <input matInput [(ngModel)]="username">
-  </mat-form-field>
-  <mat-form-field>
-    <mat-label>Password</mat-label>
-    <input matInput type="password" [(ngModel)]="password">
-  </mat-form-field>
+
+<div class="container">
+  <h2>Register</h2>
+  <div class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field>
+  </div>
 </div>
+

@@ -1,6 +1,16 @@
-<div>
-  <label>Username</label>
-  <input type="text">
-  <label>Password</label>
-  <input type="password">
-</div>>
+
+<div class="container">
+  <h2>Start Budgeting Today!</h2>
+  <div class="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="username">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" [(ngModel)]="password">
+    </mat-form-field>
+    <button mat-flat-button color="primary">Register</button>
+  </div>
+</div>
+

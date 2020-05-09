@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import jordan from '../assets/images/jordan.png';
-import jonathan from '../assets/images/jonathan.jpg';
-// const jordan = "/assets/images/jordan.png";
-// const jonathan = "/assets/images/jonathan.jpg";
+// import jordan from '/assets/images/jordan.png';
+// import jonathan from '/assets/images/jonathan.jpg';
+const jordan = "assets/images/jordan.png";
+const jonathan = "assets/images/jonathan.jpg";
 
 @Component({
   selector: 'app-about',

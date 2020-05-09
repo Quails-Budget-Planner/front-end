@@ -1,8 +1,14 @@
 <div>
-  <label>Name</label>
-  <input type="text">
-  <label>Username</label>
-  <input type="text">
-  <label>Password</label>
-  <input type="password">
-</div>>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="name">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput [(ngModel)]="username">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" [(ngModel)]="password">
+  </mat-form-field>
+</div>

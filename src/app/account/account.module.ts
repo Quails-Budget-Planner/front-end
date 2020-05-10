@@ -2,12 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
+import { CoreModule } from '../core/core.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
 
 const routes = [
   // { path: '', component: AboutComponent },
@@ -19,10 +16,7 @@ const routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    MatFormFieldModule,
-    MatInputModule,
-    FormsModule,
-    MatButtonModule,
+    CoreModule,
   ],
   exports : [
     RouterModule

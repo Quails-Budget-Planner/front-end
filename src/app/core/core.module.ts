@@ -8,6 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { ApiHttpService } from './api-http.service';
 
 
 
@@ -24,7 +25,8 @@ const modules = [
 @NgModule({
   declarations: [],
   imports: modules,
-  exports: modules
+  exports: modules,
+  providers: [ApiHttpService]
 })
 
 export class CoreModule { }

@@ -28,6 +28,7 @@ export class AboutComponent implements OnInit {
         quote: 'Big Papa Ho',
       },
     ];
+
   }
 
   ngOnInit(): void {}

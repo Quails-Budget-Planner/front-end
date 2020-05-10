@@ -1,0 +1,10 @@
+.container {
+  text-align: center;
+  background-color: gray;
+}
+
+.form > * {
+  display: block;
+  width: 50%;
+  margin: auto;
+}

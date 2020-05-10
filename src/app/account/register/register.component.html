@@ -1,6 +1,8 @@
 
 <div class="container">
   <h2>Start Budgeting Today!</h2>
+  <p *ngIf="loading">Accessing server...</p>
+  <p *ngIf="message.length">{{ message }}</p>
   <div class="form">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
@@ -14,7 +16,7 @@
       <mat-label>Password</mat-label>
       <input matInput type="password" [(ngModel)]="password">
     </mat-form-field>
-    <button mat-flat-button color="primary">Register</button>
+    <button mat-flat-button color="primary" (click)="register()">Register</button>
   </div>
 </div>
 

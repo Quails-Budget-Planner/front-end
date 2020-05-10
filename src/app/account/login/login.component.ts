@@ -24,14 +24,13 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.apiHttpService.post('auth/login', body)
       .subscribe(
-        x => {
-        console.log("SUCCESS!!!");
-        console.log(x);
-        this.loading = false;
-        this.complete = true;
+        res => {
+          this.loading = false;
+          this.complete = true;
         },
         err => {
           console.log("ERROR!!!");
+          console.log(err);
           this.loading = false;
         }
       )

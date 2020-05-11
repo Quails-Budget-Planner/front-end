@@ -9,7 +9,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { AuthGuardService as AuthGuard } from '../core/auth-guard.service';
 
 const routes = [
-  // { path: '', component: AboutComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
@@ -25,4 +24,4 @@ const routes = [
     RouterModule
   ]
 })
-export class AccountModule { }
+export class AccountModule {}

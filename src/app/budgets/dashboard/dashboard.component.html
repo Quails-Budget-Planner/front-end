@@ -1,0 +1,8 @@
+<h2>Welcome, {{ username }}!</h2>
+<p>Please select one of your saved budgets:</p>
+
+<div *ngFor="let budget of budgets">
+  <a [routerLink]="['/budget', budget.id]">
+    {{ budget.name }}
+  </a>
+</div>

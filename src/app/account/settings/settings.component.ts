@@ -8,12 +8,14 @@ import { ApiHttpService } from '../../core/api-http.service'
 })
 export class SettingsComponent implements OnInit {
   data: any = {}
+  fields: any = {}
   constructor(private apiHttpService: ApiHttpService ) { }
 
   ngOnInit(): void {
     this.apiHttpService.get('users', { headers: { Authorization: localStorage.getItem('token')}})
       .subscribe(res => {
-        console.log(res)
+        this.data = res;
+        this.fields = res;
       })
   }
 

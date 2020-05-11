@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ApiHttpService } from 'src/app/core/api-http.service';
 import { Router } from '@angular/router';
+import { LoggedInService } from 'src/app/core/logged-in.service';
 
 @Component({
   selector: 'app-login',
@@ -13,9 +14,10 @@ export class LoginComponent implements OnInit {
   loading: boolean = false;
   complete: boolean = false;
 
-  constructor(private apiHttpService: ApiHttpService, private router: Router ) { }
+  constructor(private apiHttpService: ApiHttpService, private router: Router, private loggedInService: LoggedInService ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   register() {
     const body = {
@@ -28,8 +30,8 @@ export class LoginComponent implements OnInit {
         res => {
           this.loading = false;
           this.complete = true;
-          localStorage.setItem("token", res.token);
-          this.router.navigateByUrl("budgets");
+          this.loggedInService.login(res.token);
+          // this.router.navigateByUrl("budgets");
           
         },
         err => {

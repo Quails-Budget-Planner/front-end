@@ -2,3 +2,18 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.container > * {
+  margin: 2%;
+}
+
+a {
+  color: blueviolet;
+}
+a:visited {
+  color: lightblue;
+}
+
+a:hover {
+  color: lightcoral;
+}

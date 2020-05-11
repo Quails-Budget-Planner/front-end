@@ -3,7 +3,7 @@
   <h2>Start Budgeting Today!</h2>
   <p *ngIf="loading">Accessing server...</p>
   <p *ngIf="message.length">{{ message }}</p>
-  <div class="form">
+  <div class="form" (keydown.enter)="register()">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
       <input matInput [(ngModel)]="name">

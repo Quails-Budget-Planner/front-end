@@ -1,7 +1,16 @@
 
 <div class="container">
   <h2>Welcome Back!</h2>
-  <div class="form" *ngIf="!loading; else Loading">
+  <div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="complete && isSuccess">
+    Log in successful! Redirecting soon...
+  </div>
+  <div *ngIf="isError">
+    Incorrect credentials.
+  </div>
+  <div class="form" (keydown.enter)="login()">
     <mat-form-field appearance="outline">
       <mat-label>Username</mat-label>
       <input matInput [(ngModel)]="username">
@@ -10,10 +19,8 @@
       <mat-label>Password</mat-label>
       <input matInput type="password" [(ngModel)]="password">
     </mat-form-field>
-    <button mat-flat-button color="primary" (click)="register()">Log in</button>
+    <button mat-flat-button color="primary" (click)="login()">Log in</button>
   </div>
-  <ng-template #Loading>
-    <div>LOADING</div>
-  </ng-template>
+
 </div>
 

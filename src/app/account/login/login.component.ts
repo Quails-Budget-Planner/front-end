@@ -13,33 +13,49 @@ export class LoginComponent implements OnInit {
   password: String = '';
   loading: boolean = false;
   complete: boolean = false;
+  isSuccess: boolean = false;
+  isError: boolean = false;
 
   constructor(private apiHttpService: ApiHttpService, private router: Router, private loggedInService: LoggedInService ) { }
 
   ngOnInit(): void {
   }
 
-  register() {
+  login() {
     const body = {
       username: this.username,
       password: this.password,
     };
     this.loading = true;
+    this.complete = false;
+    this.isError = false;
     this.apiHttpService.post('auth/login', body)
       .subscribe(
         res => {
-          this.loading = false;
-          this.complete = true;
-          this.loggedInService.login(res.token);
-          // this.router.navigateByUrl("budgets");
-          
+          this.success(res)
         },
         err => {
-          console.log("ERROR!!!");
-          console.log(err);
-          this.loading = false;
+          this.error();
         }
       )
     
+  }
+
+  success(res) {
+    this.loading = false;
+    this.complete = true;
+    this.isSuccess = true;
+    this.isError = false;
+    this.loggedInService.login(res.token);
+    setTimeout(() => {
+      this.router.navigateByUrl("budgets");
+    }, 500)
+  }
+
+  error() {
+    this.loading = false;
+    this.complete = true;
+    this.isSuccess = false;
+    this.isError = true;
   }
 }

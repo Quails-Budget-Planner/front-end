@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
       password: this.password,
     };
     this.loading = true;
-<<<<<<< HEAD
     this.apiHttpService.post('auth/login', body)
       .subscribe(
         res => {
@@ -44,19 +43,5 @@ export class LoginComponent implements OnInit {
         }
       )
     
-=======
-    this.apiHttpService.post('auth/login', body).subscribe(
-      (x) => {
-        console.log('SUCCESS!!!');
-        console.log(x);
-        this.loading = false;
-        this.complete = true;
-      },
-      (err) => {
-        console.log('ERROR!!!');
-        this.loading = false;
-      }
-    );
->>>>>>> b8900aae4f97bc5f6e38fdd1129c03de12e2039c
   }
 }

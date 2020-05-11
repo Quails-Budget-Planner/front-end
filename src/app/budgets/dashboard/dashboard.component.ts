@@ -34,17 +34,17 @@ export class DashboardComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    // this.loading = true;
-    // this.apiHttpService.get('').subscribe(
-    //   (x) => {
-    //     console.log(x);
-    //     this.loading = false;
-    //     this.complete = true;
-    //   },
-    //   (err) => {
-    //     console.log(err);
-    //     this.loading = false;
-    //   }
-    // );
+    this.loading = true;
+    this.apiHttpService.get('/budgets').subscribe(
+      (x) => {
+        console.log(x);
+        this.loading = false;
+        this.complete = true;
+      },
+      (err) => {
+        console.log(err);
+        this.loading = false;
+      }
+    );
   }
 }

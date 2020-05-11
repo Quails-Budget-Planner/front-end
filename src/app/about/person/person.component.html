@@ -1,8 +1,13 @@
-<div>
-  <img [src]="person.url" />
-  <h3>{{ person.name }}</h3>
-  <div>
-    <p>{{ person.title }}</p>
-    <p>{{ person.quote }}</p>
-  </div>
-</div>
+
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>{{ person.name }} </mat-card-title>
+    <mat-card-subtitle>{{ person.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="card-image" mat-card-image src="{{ person.url }}" alt="{{ person.name }} Image">
+  <mat-card-content>
+    <p>
+      {{ person.quote }}
+    </p>
+  </mat-card-content>
+</mat-card>

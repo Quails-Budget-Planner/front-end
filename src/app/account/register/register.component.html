@@ -1,9 +1,14 @@
 
 <div class="container">
   <h2>Start Budgeting Today!</h2>
-  <p *ngIf="loading">Accessing server...</p>
-  <p *ngIf="message.length">{{ message }}</p>
-  <div class="form">
+  <p *ngIf="loading">Attempting to register account...</p>
+  <div *ngIf="complete && isSuccess">
+    Register successful! Redirecting soon...
+  </div>
+  <div *ngIf="isError">
+    Error with registering. Please try filling out all forms or a new username.
+  </div>
+  <div class="form" (keydown.enter)="register()">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
       <input matInput [(ngModel)]="name">

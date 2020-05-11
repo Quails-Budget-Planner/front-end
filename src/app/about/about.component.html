@@ -1,31 +1,35 @@
-<h2>Meet the Team</h2>
-<div class="container">
-  <app-person *ngFor="let person of team" [person]="person"></app-person>
-</div>
-<hr />
 <div>
-  <p>
-    Jonathan and Jordan are Lambda School graduates. They've built several
-    applications together, including
-    <a
-      href="https://explorequality.com/"
-      target="_blank"
-      rel="noopener noreferrer"
-      >QualityHub + InterviewQ</a
-    >,
-    <a
-      href="https://createadventure.netlify.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Create Your Own Adventure</a
-    >, and
-    <a
-      href="https://lambdalegend.netlify.app/"
-      target="_blank"
-      rel="noopener noreferrer"
-      >The Legend of Lambda</a
-    >. This application is built with Angular, Express, and DynamoDB. The two
-    wanted to explore different web development technologies and apply their
-    knowledge of AWS.
-  </p>
+  <h2 class="title">Meet the Team</h2>
+  <div class="container">
+    <app-person *ngFor="let person of team" [person]="person"></app-person>
+  </div>
+  <hr>
+  <mat-card class="more-info">
+    <mat-card-content>
+      <p>
+        Jonathan and Jordan are Lambda School graduates. They've built several
+        applications together, including
+        <a
+          href="https://explorequality.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >QualityHub + InterviewQ</a
+        >,
+        <a
+          href="https://createadventure.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Create Your Own Adventure</a
+        >, and
+        <a
+          href="https://lambdalegend.netlify.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >The Legend of Lambda</a
+        >. This application is built with Angular, Express, and DynamoDB. The two
+        wanted to explore different web development technologies and apply their
+        knowledge of AWS.
+      </p>
+    </mat-card-content>
+  </mat-card>
 </div>

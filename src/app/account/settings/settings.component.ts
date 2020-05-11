@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiHttpService } from '../../core/api-http.service'
 
 @Component({
   selector: 'app-settings',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-
-  constructor() { }
+  data: any = {}
+  constructor(private apiHttpService: ApiHttpService ) { }
 
   ngOnInit(): void {
+    this.apiHttpService.get('users', { headers: { Authorization: localStorage.getItem('token')}})
+      .subscribe(res => {
+        console.log(res)
+      })
   }
 
 }

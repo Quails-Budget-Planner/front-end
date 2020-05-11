@@ -73,6 +73,5 @@ export class RegisterComponent implements OnInit {
   error() {
     this.onCompleteRequest(true);
     this.isSuccess = false;
-
   }
 }

@@ -4,37 +4,35 @@ import { ApiHttpService } from 'src/app/core/api-http.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  username: String = "";
-  password: String = "";
+  username: String = '';
+  password: String = '';
   loading: boolean = false;
   complete: boolean = false;
 
-  constructor(private apiHttpService: ApiHttpService ) { }
+  constructor(private apiHttpService: ApiHttpService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   register() {
     const body = {
       username: this.username,
       password: this.password,
-    }
+    };
     this.loading = true;
-    this.apiHttpService.post('auth/login', body)
-      .subscribe(
-        x => {
-        console.log("SUCCESS!!!");
+    this.apiHttpService.post('auth/login', body).subscribe(
+      (x) => {
+        console.log('SUCCESS!!!');
         console.log(x);
         this.loading = false;
         this.complete = true;
-        },
-        err => {
-          console.log("ERROR!!!");
-          this.loading = false;
-        }
-      )
-    
+      },
+      (err) => {
+        console.log('ERROR!!!');
+        this.loading = false;
+      }
+    );
   }
 }

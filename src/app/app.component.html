@@ -1,13 +1,16 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Budget Planner</span>
+    <span><a class="nav-link" [routerLink]="['/']">Budget Planner</a></span>
     <span class="spacer"></span>
     <nav>
-      <a class="nav-link" [routerLink]="['/']">Home</a>
       <a class="nav-link" [routerLink]="['/about']">About</a>
-      <a class="nav-link" [routerLink]="['/budgets']">Budgets</a>
-      <a class="nav-link" [routerLink]="['/login']">Login</a>
-      <a class="nav-link" [routerLink]="['/register']">Register</a>
+      <span *ngIf="signedIn; else elseBlock">
+        <a class="nav-link" [routerLink]="['/budgets']">Budgets</a>
+      </span>
+      <ng-template #elseBlock>
+        <a class="nav-link" [routerLink]="['/login']">Login</a>
+        <a class="nav-link" [routerLink]="['/register']">Register</a>
+      </ng-template>
     </nav>
   </mat-toolbar-row>
 </mat-toolbar>

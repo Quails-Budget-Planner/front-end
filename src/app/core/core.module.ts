@@ -8,7 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { MatCardModule, MatCard } from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
+
 import { ApiHttpService } from './api-http.service';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { LoggedInService } from './logged-in.service';

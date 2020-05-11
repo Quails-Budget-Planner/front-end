@@ -2,7 +2,5 @@
 <p>Please select one of your saved budgets:</p>
 
 <div *ngFor="let budget of budgets">
-  <a [routerLink]="['/budget', budget.id]">
-    {{ budget.name }}
-  </a>
+  <div class="budget" (click)="selectBudget(budget)">{{ budget.name }}</div>
 </div>

@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { ApiHttpService } from 'src/app/core/api-http.service';
+import { DataService } from '../data.service';
 
-export interface Budget {
-  id: string;
-  name: string;
-}
+import { IBudget, emptyBudget } from '../budget';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,32 +12,41 @@ export interface Budget {
   styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-  constructor(private apiHttpService: ApiHttpService) {}
+  constructor(
+    private apiHttpService: ApiHttpService,
+    private data: DataService,
+    private router: Router
+  ) {}
 
-  username = 'JOHNNIE';
+  username = '';
   loading: boolean = false;
   complete: boolean = false;
 
-  budgets: Budget[] = [
-    {
-      id: 'budget01',
-      name: 'Budget 01',
-    },
-    {
-      id: 'budget02',
-      name: 'Budget 02',
-    },
-    {
-      id: 'budget03',
-      name: 'Budget 03',
-    },
-  ];
+  selectedBudget: IBudget = emptyBudget;
+
+  budgets: IBudget[] = [];
 
   ngOnInit(): void {
+    this.data.currentBudget.subscribe(
+      (budget) => (this.selectedBudget = budget)
+    );
+
     this.loading = true;
-    this.apiHttpService.get('/budgets').subscribe(
-      (x) => {
-        console.log(x);
+
+    const token = localStorage.getItem('token');
+
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'applications/json',
+        Authorization: token,
+      }),
+    };
+
+    this.apiHttpService.get('budget', options).subscribe(
+      (data) => {
+        this.username = data.Items[0]['username'];
+        this.budgets = data.Items;
+
         this.loading = false;
         this.complete = true;
       },
@@ -46,5 +55,11 @@ export class DashboardComponent implements OnInit {
         this.loading = false;
       }
     );
+  }
+
+  selectBudget(budget: IBudget) {
+    const budgetURL = budget.username + '-' + budget.name.split(' ').join('');
+    this.data.changeBudget(budget);
+    this.router.navigateByUrl(`budget/${budgetURL}`);
   }
 }

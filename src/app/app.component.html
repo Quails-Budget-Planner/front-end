@@ -1,9 +1,8 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Budget Planner</span>
+    <span><a class="nav-link" [routerLink]="['/']">Budget Planner</a></span>
     <span class="spacer"></span>
     <nav>
-      <a class="nav-link" [routerLink]="['/']">Home</a>
       <a class="nav-link" [routerLink]="['/about']">About</a>
       <span *ngIf="signedIn; else elseBlock">
         <a class="nav-link" [routerLink]="['/budgets']">Budgets</a>

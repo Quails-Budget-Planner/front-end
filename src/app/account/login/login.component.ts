@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiHttpService } from 'src/app/core/api-http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   loading: boolean = false;
   complete: boolean = false;
 
-  constructor(private apiHttpService: ApiHttpService) {}
+  constructor(private apiHttpService: ApiHttpService, private router: Router ) { }
 
   ngOnInit(): void {}
 
@@ -22,17 +23,21 @@ export class LoginComponent implements OnInit {
       password: this.password,
     };
     this.loading = true;
-    this.apiHttpService.post('auth/login', body).subscribe(
-      (x) => {
-        console.log('SUCCESS!!!');
-        console.log(x);
-        this.loading = false;
-        this.complete = true;
-      },
-      (err) => {
-        console.log('ERROR!!!');
-        this.loading = false;
-      }
-    );
+    this.apiHttpService.post('auth/login', body)
+      .subscribe(
+        res => {
+          this.loading = false;
+          this.complete = true;
+          localStorage.setItem("token", res.token);
+          this.router.navigateByUrl("budgets");
+          
+        },
+        err => {
+          console.log("ERROR!!!");
+          console.log(err);
+          this.loading = false;
+        }
+      )
+    
   }
 }

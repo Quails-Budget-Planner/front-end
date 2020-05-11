@@ -9,7 +9,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { ApiHttpService } from './api-http.service';
-
+import { AuthGuardService as AuthGuard, AuthGuardService } from './auth-guard.service';
 
 
 const modules = [
@@ -26,7 +26,7 @@ const modules = [
   declarations: [],
   imports: modules,
   exports: modules,
-  providers: [ApiHttpService]
+  providers: [ApiHttpService, AuthGuard]
 })
 
 export class CoreModule { }

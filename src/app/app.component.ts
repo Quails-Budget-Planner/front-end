@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggedInService } from './core/logged-in.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
   // title = 'front-end';
-  signedIn = false;
+  signedIn: Boolean;
 
-  ngOnInit(): void {
-    if (localStorage.getItem('token')) {
-      this.signedIn = true;
-    } else {
-      console.log('NO token');
-    }
+  constructor (private loggedInService: LoggedInService) {
   }
+
+  logout() {
+    this.loggedInService.logout();
+  }
+  
+  ngOnInit(): void {
+    this.loggedInService.isLoggedIn().subscribe(x => this.signedIn = x);
+  }
+
 }

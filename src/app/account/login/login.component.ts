@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiHttpService } from 'src/app/core/api-http.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   loading: boolean = false;
   complete: boolean = false;
 
-  constructor(private apiHttpService: ApiHttpService ) { }
+  constructor(private apiHttpService: ApiHttpService, private router: Router ) { }
 
   ngOnInit(): void {
   }
@@ -27,6 +28,9 @@ export class LoginComponent implements OnInit {
         res => {
           this.loading = false;
           this.complete = true;
+          localStorage.setItem("token", res.data.token);
+          this.router.navigateByUrl("");
+          
         },
         err => {
           console.log("ERROR!!!");

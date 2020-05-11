@@ -32,10 +32,11 @@ export class RegisterComponent implements OnInit {
     this.loading = true;
     this.apiHttpService.post('auth/register', body)
       .subscribe(
-        x => {
+        res => {
           this.loading = false;
           this.complete = true;
           this.message = "Sign up complete! Redirecting..."
+          localStorage.setItem("token", res.data.token);
           this.router.navigateByUrl("");
       },
         err => {

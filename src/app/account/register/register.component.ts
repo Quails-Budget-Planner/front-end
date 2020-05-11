@@ -37,7 +37,7 @@ export class RegisterComponent implements OnInit {
           this.complete = true;
           this.message = "Sign up complete! Redirecting..."
           localStorage.setItem("token", res.token);
-          this.router.navigateByUrl("");
+          this.router.navigateByUrl("budgets");
       },
         err => {
           this.loading = false;

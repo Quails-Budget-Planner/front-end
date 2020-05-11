@@ -13,13 +13,9 @@ export class LoginComponent implements OnInit {
   loading: boolean = false;
   complete: boolean = false;
 
-<<<<<<< HEAD
   constructor(private apiHttpService: ApiHttpService, private router: Router ) { }
-=======
-  constructor(private apiHttpService: ApiHttpService) {}
 
   ngOnInit(): void {}
->>>>>>> b8900aae4f97bc5f6e38fdd1129c03de12e2039c
 
   register() {
     const body = {
@@ -33,7 +29,7 @@ export class LoginComponent implements OnInit {
           this.loading = false;
           this.complete = true;
           localStorage.setItem("token", res.token);
-          this.router.navigateByUrl("");
+          this.router.navigateByUrl("budgets");
           
         },
         err => {

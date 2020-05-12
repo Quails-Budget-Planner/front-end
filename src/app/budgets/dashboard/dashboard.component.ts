@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ApiHttpService } from 'src/app/core/api-http.service';
 import { DataService } from '../data.service';
@@ -22,8 +21,8 @@ export class DashboardComponent implements OnInit {
   loading: boolean = false;
   complete: boolean = false;
 
+  budgetCount: number = 0;
   selectedBudget: IBudget = emptyBudget;
-
   budgets: IBudget[] = [];
 
   ngOnInit(): void {
@@ -36,16 +35,16 @@ export class DashboardComponent implements OnInit {
     const token = localStorage.getItem('token');
 
     const options = {
-      headers: new HttpHeaders({
-        'Content-Type': 'applications/json',
+      headers: {
         Authorization: token,
-      }),
+      },
     };
 
     this.apiHttpService.get('budget', options).subscribe(
       (data) => {
         this.username = data.Items[0]['username'];
         this.budgets = data.Items;
+        this.budgetCount = data.Count;
 
         this.loading = false;
         this.complete = true;

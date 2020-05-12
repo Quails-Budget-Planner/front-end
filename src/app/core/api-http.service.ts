@@ -8,18 +8,22 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ApiHttpService {
+  constructor(
+    // Angular Modules
+    private http: HttpClient
+  ) {}
+  // private baseURL: String = 'http://localhost:5000/api/';
+  private baseURL: String = 'https://budget-planner-quail.herokuapp.com/api/';
 
-    constructor(
-        // Angular Modules
-        private http: HttpClient
-    ) { }
-    private baseURL: String = "https://budget-planner-quail.herokuapp.com/api/";
+  public get = (url: string, options?: any): Observable<any> =>
+    this.http.get(this.baseURL + url, options);
 
-    public get = (url: string, options?: any): Observable<any> => this.http.get(this.baseURL + url, options);
+  public post = (url: string, data: any, options?: any): Observable<any> =>
+    this.http.post(this.baseURL + url, data, options);
 
-    public post = (url: string, data: any, options?: any): Observable<any> => this.http.post(this.baseURL + url, data, options);
+  public put = (url: string, data: any, options?: any): Observable<any> =>
+    this.http.put(this.baseURL + url, data, options);
 
-    public put = (url: string, data: any, options?: any): Observable<any> => this.http.put(this.baseURL + url, data, options);
-
-    public delete = (url: string, options?: any): Observable<any> => this.http.delete(this.baseURL + url, options);
+  public delete = (url: string, options?: any): Observable<any> =>
+    this.http.delete(this.baseURL + url, options);
 }

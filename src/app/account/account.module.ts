@@ -7,10 +7,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AuthGuardService as AuthGuard } from '../core/auth-guard.service';
+import { UnAuthGuardService } from '../core/un-auth-guard.service';
 
 const routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: LoginComponent, canActivate: [UnAuthGuardService] },
+  { path: 'register', component: RegisterComponent, canActivate: [UnAuthGuardService]},
   { path: 'settings', component: SettingsComponent, canActivate: [AuthGuard] }
 ]
 @NgModule({

@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 
 import { ApiHttpService } from './api-http.service';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
+import { UnAuthGuardService } from './un-auth-guard.service';
 import { LoggedInService } from './logged-in.service';
 
 
@@ -30,7 +31,7 @@ const modules = [
   declarations: [],
   imports: modules,
   exports: modules,
-  providers: [ApiHttpService, AuthGuard, LoggedInService]
+  providers: [ApiHttpService, AuthGuard, LoggedInService, UnAuthGuardService]
 })
 
 export class CoreModule { }

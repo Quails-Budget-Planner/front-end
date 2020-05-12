@@ -4,5 +4,9 @@
 
 <app-budget-form [budget]="selectedBudget"></app-budget-form>
 
-<button mat-flat-button color="primary">Submit budget</button>
-<button mat-flat-button color="warn">Delete budget</button>
+<button mat-flat-button color="primary" (click)="updateBudget()">
+  Save budget
+</button>
+<button mat-flat-button color="warn" (click)="deleteBudget()">
+  Delete budget
+</button>

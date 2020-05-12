@@ -11,11 +11,12 @@ import { IBudget, emptyBudget } from '../budget';
   styleUrls: ['./create-budget.component.css'],
 })
 export class CreateBudgetComponent implements OnInit {
-  newBudget: IBudget = emptyBudget;
   loading: boolean = false;
   complete: boolean = false;
   isSuccess: boolean = false;
   isError: boolean = false;
+
+  newBudget: IBudget = emptyBudget;
 
   constructor(
     private apiHttpService: ApiHttpService,
@@ -26,7 +27,7 @@ export class CreateBudgetComponent implements OnInit {
   ngOnInit(): void {}
 
   submitBudget() {
-    console.log(this.newBudget);
+    // console.log(this.newBudget);
     this.loading = true;
     this.complete = false;
     this.isError = false;

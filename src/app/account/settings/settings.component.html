@@ -1,8 +1,17 @@
 <div>
   <h3>Hello, {{ data.name }} </h3>
+  <p *ngIf="loading">Making changes...</p>
   <mat-form-field appearance="outline">
-    <mat-label>Name</mat-label>
-    <input matInput [(ngModel)]="fields.name" type="text">
+    <mat-label>Change Name</mat-label>
+    <input matInput [(ngModel)]="name" type="text">
   </mat-form-field>
-  <button>Save</button>
-</div>>
+  <div class="buttons">
+    <button class="button" mat-raised-button color="primary" (click)="handleEdit()">Save</button>
+    <button class="button" mat-stroked-button color="warn" (click)="toggleDelete()">Delete account</button>
+  </div>
+  <div *ngIf="deletePrompt">
+    <p>Are you sure? You cannot undo this action. </p>
+    <button class="button" mat-raised-button color="primary" (click)="toggleDelete()">Cancel</button>
+    <button class="button" mat-raised-button color="warn" (click)="handleDelete()">Delete account</button>
+  </div>
+</div>

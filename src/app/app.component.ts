@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   logout() {
     this.loggedInService.logout();
     this.router.navigateByUrl("");
-
   }
   
   ngOnInit(): void {

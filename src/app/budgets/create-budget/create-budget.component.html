@@ -1,0 +1,9 @@
+<a mat-button color="accent" [routerLink]="['/dashboard']">Back to dashboard</a>
+
+<h2>Create a new budget below!</h2>
+
+<app-budget-form [budget]="newBudget"></app-budget-form>
+
+<button mat-flat-button color="primary" (click)="submitBudget()">
+  Submit budget
+</button>

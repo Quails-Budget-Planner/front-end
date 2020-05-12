@@ -6,43 +6,43 @@ import { LoggedInService } from 'src/app/core/logged-in.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent implements OnInit {
-  name: String = "";
-  username: String = "";
-  password: String = "";
+  name: String = '';
+  username: String = '';
+  password: String = '';
   loading: boolean = false;
   complete: boolean = false;
   isSuccess: boolean = false;
   isError: boolean = false;
 
-  constructor(private apiHttpService: ApiHttpService, private router: Router, private loggedInService: LoggedInService ) { 
-    
-  }
+  constructor(
+    private apiHttpService: ApiHttpService,
+    private router: Router,
+    private loggedInService: LoggedInService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   register() {
     const body = {
       name: this.name,
       username: this.username,
       password: this.password,
-    }
+    };
 
     this.loading = true;
     this.complete = false;
     this.isError = false;
-    this.apiHttpService.post('auth/register', body)
-      .subscribe(
-        res => {
-          this.success(res)
-        },
-        err => {
-          this.error();
-        }
-      ) 
+    this.apiHttpService.post('auth/register', body).subscribe(
+      (res) => {
+        this.success(res);
+      },
+      (err) => {
+        this.error();
+      }
+    );
   }
 
   onCompleteRequest(error) {
@@ -52,13 +52,13 @@ export class RegisterComponent implements OnInit {
         this.complete = true;
         this.isSuccess = true;
         this.isError = false;
-      }, 600)
+      }, 600);
     } else {
-        setTimeout(() => {
-          this.loading = false;
-          this.complete = true;
-          this.isError = true;
-        }, 600)
+      setTimeout(() => {
+        this.loading = false;
+        this.complete = true;
+        this.isError = true;
+      }, 600);
     }
   }
 
@@ -66,8 +66,8 @@ export class RegisterComponent implements OnInit {
     this.onCompleteRequest(false);
     this.loggedInService.login(res.token);
     setTimeout(() => {
-      this.router.navigateByUrl("budgets");
-    }, 500)
+      this.router.navigateByUrl('dashboard');
+    }, 500);
   }
 
   error() {

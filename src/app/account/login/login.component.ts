@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ApiHttpService } from 'src/app/core/api-http.service';
 import { Router } from '@angular/router';
 import { LoggedInService } from 'src/app/core/logged-in.service';
@@ -16,10 +16,13 @@ export class LoginComponent implements OnInit {
   isSuccess: boolean = false;
   isError: boolean = false;
 
-  constructor(private apiHttpService: ApiHttpService, private router: Router, private loggedInService: LoggedInService ) { }
+  constructor(
+    private apiHttpService: ApiHttpService,
+    private router: Router,
+    private loggedInService: LoggedInService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login() {
     const body = {
@@ -29,16 +32,14 @@ export class LoginComponent implements OnInit {
     this.loading = true;
     this.complete = false;
     this.isError = false;
-    this.apiHttpService.post('auth/login', body)
-      .subscribe(
-        res => {
-          this.success(res)
-        },
-        err => {
-          this.error();
-        }
-      )
-    
+    this.apiHttpService.post('auth/login', body).subscribe(
+      (res) => {
+        this.success(res);
+      },
+      (err) => {
+        this.error();
+      }
+    );
   }
 
   success(res) {
@@ -48,8 +49,8 @@ export class LoginComponent implements OnInit {
     this.isError = false;
     this.loggedInService.login(res.token);
     setTimeout(() => {
-      this.router.navigateByUrl("budgets");
-    }, 500)
+      this.router.navigateByUrl('dashboard');
+    }, 500);
   }
 
   error() {

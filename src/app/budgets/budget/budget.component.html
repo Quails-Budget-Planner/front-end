@@ -1,64 +1,8 @@
-<a [routerLink]="['/budgets']">Back to budgets</a>
+<a mat-button color="accent" [routerLink]="['/dashboard']">Back to dashboard</a>
 
-<h3>Main Info</h3>
-<div>Username: {{ selectedBudget.username }}</div>
-<div>Name: {{ selectedBudget.name }}</div>
-<div>Location: {{ selectedBudget.loc }}</div>
-<div>Salary: {{ selectedBudget.salary }}</div>
-<div>Additional Income: {{ selectedBudget.additional_income }}</div>
+<h2>Budget: {{ selectedBudget.name }}</h2>
 
-<h3>Housing</h3>
-<div>Rent/Mortgage: {{ selectedBudget.housing.rent_or_mortgage }}</div>
-<div>
-  Utilities (gas, electric, water, etc.): {{ selectedBudget.housing.utilities }}
-</div>
+<app-budget-form [budget]="selectedBudget"></app-budget-form>
 
-<h3>Food</h3>
-<div>Groceries: {{ selectedBudget.food.groceries }}</div>
-<div>Restaurants/Meals out: {{ selectedBudget.food.restaurants }}</div>
-<div>Social: {{ selectedBudget.food.social }}</div>
-
-<h3>Medical</h3>
-<div>Health insurance: {{ selectedBudget.medical.insurance }}</div>
-<div>Medical expenses: {{ selectedBudget.medical.expenses }}</div>
-
-<h3>Transportation</h3>
-<div>Car payment: {{ selectedBudget.transportation.car_payment }}</div>
-<div>Insurance: {{ selectedBudget.transportation.insurance }}</div>
-<div>Gas: {{ selectedBudget.transportation.gas }}</div>
-<div>Misc (tolls/parking): {{ selectedBudget.transportation.misc }}</div>
-<div>Public Transit: {{ selectedBudget.transportation.public_transit }}</div>
-<div>Taxi/Uber/Lyft: {{ selectedBudget.transportation.ride_share }}</div>
-
-<h3>Other Necessary Expenses</h3>
-<div>Childcare: {{ selectedBudget.other_necessary.childcare }}</div>
-<div>
-  Supporting other dependents:
-  {{ selectedBudget.other_necessary.other_dependents }}
-</div>
-<div>Cell phone: {{ selectedBudget.other_necessary.cellphone }}</div>
-<div>Internet: {{ selectedBudget.other_necessary.internet }}</div>
-<div>
-  Loan, credit card, other debt payments:
-  {{ selectedBudget.other_necessary.debt_payments }}
-</div>
-
-<h3>Personal Expenses</h3>
-<div>
-  Gym membership/fitness classes: {{ selectedBudget.personal_expenses.fitness }}
-</div>
-<div>Clothing: {{ selectedBudget.personal_expenses.clothing }}</div>
-<div>Electronics: {{ selectedBudget.personal_expenses.electronics }}</div>
-<div>Entertainment: {{ selectedBudget.personal_expenses.entertainment }}</div>
-<div>
-  Toiletries and personal care items:
-  {{ selectedBudget.personal_expenses.hygiene }}
-</div>
-<div>Vacation and travel: {{ selectedBudget.personal_expenses.travel }}</div>
-<div>Other: {{ selectedBudget.personal_expenses.misc }}</div>
-
-<h3>Savings</h3>
-<div>Retirement: {{ selectedBudget.savings.retirement }}</div>
-<div>General savings: {{ selectedBudget.savings.general }}</div>
-<div>Investments: {{ selectedBudget.savings.investments }}</div>
-<div>Other: {{ selectedBudget.savings.misc }}</div>
+<button mat-flat-button color="primary">Submit budget</button>
+<button mat-flat-button color="warn">Delete budget</button>

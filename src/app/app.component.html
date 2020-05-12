@@ -5,10 +5,10 @@
     <nav>
       <a class="nav-link" [routerLink]="['/about']">About</a>
       <span *ngIf="signedIn; else elseBlock">
-        <a class="nav-link" [routerLink]="['/budgets']">Budgets</a>
+        <a class="nav-link" [routerLink]="['/dashboard']">Dashboard</a>
         <a class="nav-link" (click)="logout()">Logout</a>
       </span>
-      <ng-template #elseBlock (loggedIn)="setSignIn($event)">
+      <ng-template #elseBlock>
         <a class="nav-link" [routerLink]="['/login']">Login</a>
         <a class="nav-link" [routerLink]="['/register']">Register</a>
       </ng-template>

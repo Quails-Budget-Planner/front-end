@@ -11,6 +11,7 @@ import { BudgetsModule } from './budgets/budgets.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PersonComponent } from './about/person/person.component';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { CoreModule } from './core/core.module';
     BudgetsModule,
     BrowserAnimationsModule,
     CoreModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

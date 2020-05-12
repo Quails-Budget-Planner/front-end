@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AuthGuardService as AuthGuard } from '../core/auth-guard.service';
 import { UnAuthGuardService } from '../core/un-auth-guard.service';
+import { SharedModule } from '../shared/shared.module';
 
 const routes = [
   { path: 'login', component: LoginComponent, canActivate: [UnAuthGuardService] },
@@ -20,6 +21,7 @@ const routes = [
     CommonModule,
     RouterModule.forChild(routes),
     CoreModule,
+    SharedModule
   ],
   exports : [
     RouterModule

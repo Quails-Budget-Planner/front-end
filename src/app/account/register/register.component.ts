@@ -66,7 +66,7 @@ export class RegisterComponent implements OnInit {
     this.onCompleteRequest(false);
     this.loggedInService.login(res.token);
     setTimeout(() => {
-      this.router.navigateByUrl('budgets');
+      this.router.navigateByUrl('dashboard');
     }, 500);
   }
 

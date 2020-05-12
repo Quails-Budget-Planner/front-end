@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
     this.isError = false;
     this.loggedInService.login(res.token);
     setTimeout(() => {
-      this.router.navigateByUrl('budgets');
+      this.router.navigateByUrl('dashboard');
     }, 500);
   }
 

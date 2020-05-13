@@ -28,6 +28,9 @@ export class BudgetComponent implements OnInit {
     this.data.currentBudget.subscribe(
       (budget) => (this.selectedBudget = budget)
     );
+    if (this.selectedBudget.name === '') {
+      this.selectedBudget = JSON.parse(localStorage.getItem('currentBudget'));
+    }
   }
 
   updateBudget() {
@@ -49,6 +52,10 @@ export class BudgetComponent implements OnInit {
       (res) => {
         this.success(res);
 
+        localStorage.setItem(
+          'currentBudget',
+          JSON.stringify(this.selectedBudget)
+        );
         this.data.changeBudget(this.selectedBudget);
       },
       (err) => {

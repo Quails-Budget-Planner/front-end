@@ -58,6 +58,7 @@ export class DashboardComponent implements OnInit {
 
   selectBudget(budget: IBudget) {
     const budgetURL = budget.username + '-' + budget.name.split(' ').join('');
+    localStorage.setItem('currentBudget', JSON.stringify(budget));
     this.data.changeBudget(budget);
     this.router.navigateByUrl(`budget/${budgetURL}`);
   }

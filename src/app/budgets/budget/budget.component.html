@@ -1,11 +1,15 @@
 <a mat-button color="accent" [routerLink]="['/dashboard']">Back to dashboard</a>
 
 <h2>Budget: {{ selectedBudget.name }}</h2>
-<app-budget-form [budget]="selectedBudget"></app-budget-form>
-<button mat-flat-button color="primary" (click)="updateBudget()">
-  Save budget
-</button>
-<button mat-flat-button color="warn" (click)="openDialog()">
-  Delete budget
-</button>
-<app-visualization [budget]="selectedBudget"></app-visualization>
+<div class="container">
+  <div>
+    <app-budget-form [budget]="selectedBudget"></app-budget-form>
+    <button mat-flat-button color="primary" (click)="updateBudget()">
+      Save budget
+    </button>
+    <button mat-flat-button color="warn" (click)="openDialog()">
+      Delete budget
+    </button>
+  </div>
+  <app-visualization [budget]="selectedBudget"></app-visualization>
+</div>

@@ -1,8 +1,19 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
 button {
   margin-right: 10px;
 }
 
-.container {
+.budget {
   display: flex;
-  justify-content: space-around;
+  /* flex-direction: column; */
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+sectionn {
+  width: 300px;
 }

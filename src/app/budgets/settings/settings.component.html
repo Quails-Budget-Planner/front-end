@@ -1,16 +1,25 @@
 <div>
   <h3>Settings</h3>
-  <p *ngIf="loading else Complete">Making changes...</p>
+  <p *ngIf="loading; else Complete">Making changes...</p>
   <ng-template #Complete>
     <p>{{ message }}</p>
   </ng-template>
   <mat-form-field appearance="outline">
     <mat-label>Change Name</mat-label>
-    <input matInput [(ngModel)]="name" type="text">
+    <input matInput [(ngModel)]="name" type="text" />
   </mat-form-field>
   <div class="buttons">
-    <button class="button" mat-raised-button color="primary" (click)="handleEdit()">Save</button>
-    <button class="button" mat-stroked-button color="warn" (click)="openDialog()">Delete account</button>
+    <button
+      class="button"
+      mat-flat-button
+      color="primary"
+      (click)="handleEdit()"
+    >
+      Save
+    </button>
+    <button class="button" mat-flat-button color="warn" (click)="openDialog()">
+      Delete account
+    </button>
   </div>
   <!-- <div *ngIf="deletePrompt" class="modal">
     <p>Are you sure? You cannot undo this action. </p>

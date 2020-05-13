@@ -14,6 +14,7 @@ export class SettingsComponent implements OnInit {
   data: any = {}
   fields: any = {}
   name: String = "";
+  message: String = "";
   loading: Boolean = false;
   deletePrompt: Boolean = false;
   constructor(
@@ -43,10 +44,12 @@ export class SettingsComponent implements OnInit {
 
   handleEdit() {
     this.loading = true;
+    this.message = "";
     this.apiHttpService.put('users', { name: this.name }, { headers: { Authorization: localStorage.getItem('token')}})
       .subscribe(res => {
         this.loading = false;
         this.data.name = this.name;
+        this.message = "Name changed."
       })
   }
 

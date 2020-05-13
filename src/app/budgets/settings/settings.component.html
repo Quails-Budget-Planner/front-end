@@ -1,6 +1,9 @@
 <div>
-  <h3>Hello, {{ data.name }} </h3>
-  <p *ngIf="loading">Making changes...</p>
+  <h3>Settings</h3>
+  <p *ngIf="loading else Complete">Making changes...</p>
+  <ng-template #Complete>
+    <p>{{ message }}</p>
+  </ng-template>
   <mat-form-field appearance="outline">
     <mat-label>Change Name</mat-label>
     <input matInput [(ngModel)]="name" type="text">

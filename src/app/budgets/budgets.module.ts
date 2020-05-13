@@ -7,6 +7,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BudgetComponent } from './budget/budget.component';
 import { CreateBudgetComponent } from './create-budget/create-budget.component';
 import { BudgetFormComponent } from './budget-form/budget-form.component';
+import { SettingsComponent } from '../budgets/settings/settings.component';
 
 const routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -20,6 +21,7 @@ const routes = [
     BudgetComponent,
     CreateBudgetComponent,
     BudgetFormComponent,
+    SettingsComponent
   ],
   imports: [CommonModule, RouterModule.forChild(routes), CoreModule],
   exports: [RouterModule],

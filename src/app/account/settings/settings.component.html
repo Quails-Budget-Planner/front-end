@@ -7,12 +7,11 @@
   </mat-form-field>
   <div class="buttons">
     <button class="button" mat-raised-button color="primary" (click)="handleEdit()">Save</button>
-    <button class="button" mat-stroked-button color="warn" >Delete account</button>
+    <button class="button" mat-stroked-button color="warn" (click)="openDialog()">Delete account</button>
   </div>
-  <div *ngIf="deletePrompt" class="modal">
+  <!-- <div *ngIf="deletePrompt" class="modal">
     <p>Are you sure? You cannot undo this action. </p>
     <button class="button" mat-raised-button color="primary" (click)="toggleDelete()">Cancel</button>
     <button class="button" mat-raised-button color="warn" (click)="handleDelete()">Delete account</button>
-  </div>
-  <!-- <app-modal></app-modal> -->
+  </div> -->
 </div>

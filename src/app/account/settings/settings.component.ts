@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ApiHttpService } from '../../core/api-http.service'
 import { Router } from '@angular/router';
 import { LoggedInService } from 'src/app/core/logged-in.service';
-// import { MatDialog } from '@angular/material/dialog';
-// import { ModalComponent } from '../../shared/modal/modal.component';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from '../../shared/modal/modal.component';
 
 @Component({
   selector: 'app-settings',
@@ -16,18 +16,21 @@ export class SettingsComponent implements OnInit {
   name: String = "";
   loading: Boolean = false;
   deletePrompt: Boolean = false;
-  constructor(private apiHttpService: ApiHttpService, 
+  constructor(
+    private apiHttpService: ApiHttpService, 
     private router: Router, 
     private loggedInService: LoggedInService,
+    public dialog: MatDialog
     ) { }
 
-  // openDialog(): void {
-  //   // const dialogRef = this.dialog.open(ModalComponent, { width: '250px'});
-  //   // dialogRef.afterClosed().subscribe(result => {
-  //   //   console.log('Dialog closed');
-  //   //   console.log(result);
-  //   // })
-  // }
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, { data: { title: "Delete Account", message: "Are you sure? You cannot undo this action."}});
+    dialogRef.afterClosed().subscribe(confirm => {
+      if (confirm) {
+        this.handleDelete();
+      }
+    })
+  }
 
 
   ngOnInit(): void {

@@ -28,7 +28,7 @@ export class BudgetComponent implements OnInit {
     private data: DataService,
     private router: Router,
     public dialog: MatDialog,
-    private _snackBar: MatSnackBar // private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar
   ) {}
 
   openSnackBar() {

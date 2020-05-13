@@ -1,11 +1,13 @@
-<h1 mat-dialog-title>{{ data.title }}</h1>
-<div mat-dialog-content>
-  {{ data.message }}
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">Cancel</button>
-  <button mat-button color="warn" cdkFocusInitial [mat-dialog-close]="true">
-    Confirm
-  </button>
-  <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button> -->
+<div>
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+  <div mat-dialog-content>
+    {{ data.message }}
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancel</button>
+    <button mat-button color="warn" cdkFocusInitial [mat-dialog-close]="true">
+      Confirm
+    </button>
+    <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Ok</button> -->
+  </div>
 </div>

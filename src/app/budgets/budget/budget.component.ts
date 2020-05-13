@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiHttpService } from 'src/app/core/api-http.service';
 import { DataService } from '../data.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ModalComponent } from 'src/app/shared/modal/modal.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { IBudget } from '../budget';
 
@@ -18,11 +21,35 @@ export class BudgetComponent implements OnInit {
 
   selectedBudget: IBudget;
 
+  durationInSeconds = 5;
+
   constructor(
     private apiHttpService: ApiHttpService,
     private data: DataService,
-    private router: Router
+    private router: Router,
+    public dialog: MatDialog,
+    private _snackBar: MatSnackBar // private _snackBar: MatSnackBar
   ) {}
+
+  openSnackBar() {
+    this._snackBar.openFromComponent(SnackBarComponent, {
+      duration: this.durationInSeconds * 1000,
+    });
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(ModalComponent, {
+      data: {
+        title: 'Delete Budget',
+        message: 'Are you sure? You cannot undo this action.',
+      },
+    });
+    dialogRef.afterClosed().subscribe((confirm) => {
+      if (confirm) {
+        this.deleteBudget();
+      }
+    });
+  }
 
   ngOnInit(): void {
     this.data.currentBudget.subscribe(
@@ -57,6 +84,7 @@ export class BudgetComponent implements OnInit {
           JSON.stringify(this.selectedBudget)
         );
         this.data.changeBudget(this.selectedBudget);
+        this.openSnackBar();
       },
       (err) => {
         console.log(err);
@@ -108,3 +136,9 @@ export class BudgetComponent implements OnInit {
     this.isError = true;
   }
 }
+
+@Component({
+  selector: 'snack-bar-component',
+  template: '<span>Budget saved!</span>',
+})
+export class SnackBarComponent {}

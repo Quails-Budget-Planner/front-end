@@ -5,7 +5,7 @@ import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/shared/modal/modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
 import { IBudget } from '../budget';
 
 @Component({

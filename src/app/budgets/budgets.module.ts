@@ -10,6 +10,7 @@ import { BudgetComponent, SnackBarComponent } from './budget/budget.component';
 import { CreateBudgetComponent } from './create-budget/create-budget.component';
 import { BudgetFormComponent } from './budget-form/budget-form.component';
 import { SettingsComponent } from '../budgets/settings/settings.component';
+import { VisualizationComponent } from './visualization/visualization.component';
 
 const routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -17,7 +18,7 @@ const routes = [
   { path: 'createbudget', component: CreateBudgetComponent },
 ];
 
-@NgModule({
+  @NgModule({
   declarations: [
     DashboardComponent,
     BudgetComponent,
@@ -25,6 +26,7 @@ const routes = [
     BudgetFormComponent,
     SettingsComponent,
     SnackBarComponent,
+    VisualizationComponent,
   ],
   imports: [
     CommonModule,

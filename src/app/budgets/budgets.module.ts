@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CoreModule } from '../core/core.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BudgetComponent, SnackBarComponent } from './budget/budget.component';
@@ -18,7 +19,7 @@ const routes = [
   { path: 'createbudget', component: CreateBudgetComponent },
 ];
 
-  @NgModule({
+@NgModule({
   declarations: [
     DashboardComponent,
     BudgetComponent,
@@ -34,6 +35,7 @@ const routes = [
     CoreModule,
     MatSnackBarModule,
     MatDialogModule,
+    MatExpansionModule,
   ],
   exports: [RouterModule],
 })

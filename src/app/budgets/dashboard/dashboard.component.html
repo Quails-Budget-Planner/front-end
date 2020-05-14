@@ -1,11 +1,18 @@
-<h2>Welcome, {{ username }}!</h2>
-<div class="budgets" *ngIf="budgetCount > 0">
-  <p>Please select one of your saved budgets:</p>
-  <div *ngFor="let budget of budgets">
-    <button mat-button color="accent" (click)="selectBudget(budget)">
-      {{ budget.name }}
-    </button>
+<h2>Welcome<span *ngIf="username">, </span>{{ username }}!</h2>
+<div class="dashboard">
+  <div>
+    <h3>Budgets</h3>
+    <div class="budgets" *ngIf="budgetCount > 0">
+      <p>Please select one of your saved budgets:</p>
+      <div *ngFor="let budget of budgets">
+        <button mat-button color="accent" (click)="selectBudget(budget)">
+          {{ budget.name }}
+        </button>
+      </div>
+    </div>
+    <a mat-flat-button color="primary" [routerLink]="['/createbudget']"
+      >Create a new budget</a
+    >
   </div>
+  <app-settings></app-settings>
 </div>
-<a mat-stroked-button [routerLink]="['/createbudget']">Create a new budget</a>
-<app-settings></app-settings>

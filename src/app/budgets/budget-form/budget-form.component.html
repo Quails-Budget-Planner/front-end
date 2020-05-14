@@ -1,246 +1,322 @@
 <div class="form">
-  <h3>Main</h3>
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Main
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Budget Name</mat-label>
+          <input matInput type="text" [(ngModel)]="budget.name" required />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Budget Name</mat-label>
-    <input matInput type="text" [(ngModel)]="budget.name" required />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Annual Salary</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.salary" />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Salary</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.salary" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Location</mat-label>
+          <input matInput type="text" [(ngModel)]="budget.loc" required />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Location</mat-label>
-    <input matInput type="text" [(ngModel)]="budget.loc" required />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Additional Income</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.additional_income"
+          />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <mat-form-field>
-    <mat-label>Additional Income</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.additional_income" />
-  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Housing</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Rent/Mortgage</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.housing.rent_or_mortgage"
+          />
+        </mat-form-field>
 
-  <h3>Housing</h3>
+        <mat-form-field>
+          <mat-label>Utilities</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.housing.utilities"
+          />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <mat-form-field>
-    <mat-label>Rent/Mortgage</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.housing.rent_or_mortgage"
-    />
-  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Food</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Groceries</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.food.groceries" />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Utilities</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.housing.utilities" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Restaurants/Meals Out</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.food.restaurants" />
+        </mat-form-field>
 
-  <h3>Food</h3>
+        <mat-form-field>
+          <mat-label>Social</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.food.social" />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <mat-form-field>
-    <mat-label>Groceries</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.food.groceries" />
-  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Medical</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Health insurance</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.medical.insurance"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Restaurants/Meals Out</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.food.restaurants" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Medical expenses</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.medical.expenses" />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <mat-form-field>
-    <mat-label>Social</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.food.social" />
-  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Transportation</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Car Payment</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.transportation.car_payment"
+          />
+        </mat-form-field>
 
-  <h3>Medical</h3>
+        <mat-form-field>
+          <mat-label>Insurance</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.transportation.insurance"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Health insurance</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.medical.insurance" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Gas</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.transportation.gas"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Medical expenses</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.medical.expenses" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Misc (tolls/parking)</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.transportation.misc"
+          />
+        </mat-form-field>
 
-  <h3>Transportation</h3>
+        <mat-form-field>
+          <mat-label>Public Transit</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.transportation.public_transit"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Car Payment</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.transportation.car_payment"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Taxi/Uber/Lyft</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.transportation.ride_share"
+          />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <mat-form-field>
-    <mat-label>Insurance</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.transportation.insurance"
-    />
-  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Other Necessary Expenses</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Childcare</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.other_necessary.childcare"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Gas</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.transportation.gas" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Supporting other dependents</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.other_necessary.other_dependents"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Misc (tolls/parking)</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.transportation.misc" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Cell phone</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.other_necessary.cellphone"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Public Transit</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.transportation.public_transit"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Internet</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.other_necessary.internet"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Taxi/Uber/Lyft</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.transportation.ride_share"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Loan, credit card, other debt payments</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.other_necessary.debt_payments"
+          />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <h3>Other Necessary Expenses</h3>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Personal Expenses</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Gym membership/fitness classes</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.fitness"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Childcare</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.other_necessary.childcare"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Clothing</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.clothing"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Supporting other dependents</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.other_necessary.other_dependents"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Electronics</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.electronics"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Cell phone</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.other_necessary.cellphone"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Entertainment</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.entertainment"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Internet</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.other_necessary.internet"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Toiletries and personal care items</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.hygiene"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Loan, credit card, other debt payments</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.other_necessary.debt_payments"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Vacation and travel</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.travel"
+          />
+        </mat-form-field>
 
-  <h3>Personal Expenses</h3>
+        <mat-form-field>
+          <mat-label>Other</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.personal_expenses.misc"
+          />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
 
-  <mat-form-field>
-    <mat-label>Gym membership/fitness classes</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.personal_expenses.fitness"
-    />
-  </mat-form-field>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Savings</mat-panel-title>
+      </mat-expansion-panel-header>
+      <section>
+        <mat-form-field>
+          <mat-label>Retirement</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.savings.retirement"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Clothing</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.personal_expenses.clothing"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>General savings</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.savings.general" />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Electronics</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.personal_expenses.electronics"
-    />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Investments</mat-label>
+          <input
+            matInput
+            type="number"
+            [(ngModel)]="budget.savings.investments"
+          />
+        </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Entertainment</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.personal_expenses.entertainment"
-    />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Toiletries and personal care items</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.personal_expenses.hygiene"
-    />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Vacation and travel</mat-label>
-    <input
-      matInput
-      type="number"
-      [(ngModel)]="budget.personal_expenses.travel"
-    />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Other</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.personal_expenses.misc" />
-  </mat-form-field>
-
-  <h3>Savings</h3>
-
-  <mat-form-field>
-    <mat-label>Retirement</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.savings.retirement" />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>General savings</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.savings.general" />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Investments</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.savings.investments" />
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Other</mat-label>
-    <input matInput type="number" [(ngModel)]="budget.savings.misc" />
-  </mat-form-field>
+        <mat-form-field>
+          <mat-label>Other</mat-label>
+          <input matInput type="number" [(ngModel)]="budget.savings.misc" />
+        </mat-form-field>
+      </section>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

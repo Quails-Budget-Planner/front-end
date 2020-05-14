@@ -1,3 +1,9 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .budgets {
   margin-bottom: 30px;
 }

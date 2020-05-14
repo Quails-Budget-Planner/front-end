@@ -45,7 +45,7 @@ export class BarGraphComponent implements OnInit {
 
     const barpoints = [
       {
-        y: this._budget.salary, label: "Income"
+        y: this._budget.salary/12, label: "Income"
       },
       {
         y: totalCosts, label: "Costs"

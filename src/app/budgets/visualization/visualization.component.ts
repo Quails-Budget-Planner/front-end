@@ -85,7 +85,7 @@ export class VisualizationComponent implements OnInit {
       animationEnabled: true,
       exportEnabled: true,
       title: {
-        text: 'Your Expenses',
+        text: 'Expense Breakdown',
       },
       data: [
         {

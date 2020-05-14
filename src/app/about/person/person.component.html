@@ -14,4 +14,35 @@
       {{ person.quote }}
     </p>
   </mat-card-content>
+  <mat-card-actions>
+    <a
+      mat-button
+      href="{{ person.github }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><fa-icon [icon]="faGithub" size="2x"></fa-icon
+    ></a>
+    <a
+      mat-button
+      href="{{ person.linkedin }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><fa-icon [icon]="faLinkedin" size="2x"></fa-icon
+    ></a>
+    <a
+      mat-button
+      href="{{ person.portfolio }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><fa-icon [icon]="faGlobe" size="2x"></fa-icon
+    ></a>
+    <a
+      *ngIf="person.twitter"
+      mat-button
+      href="{{ person.twitter }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      ><fa-icon [icon]="faTwitter" size="2x"></fa-icon
+    ></a>
+  </mat-card-actions>
 </mat-card>

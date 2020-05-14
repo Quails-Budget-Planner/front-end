@@ -12,6 +12,7 @@ import { CreateBudgetComponent } from './create-budget/create-budget.component';
 import { BudgetFormComponent } from './budget-form/budget-form.component';
 import { SettingsComponent } from '../budgets/settings/settings.component';
 import { VisualizationComponent } from './visualization/visualization.component';
+import { BarGraphComponent } from './bar-graph/bar-graph.component';
 
 const routes = [
   { path: 'dashboard', component: DashboardComponent },
@@ -28,6 +29,7 @@ const routes = [
     SettingsComponent,
     SnackBarComponent,
     VisualizationComponent,
+    BarGraphComponent,
   ],
   imports: [
     CommonModule,

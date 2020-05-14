@@ -26,8 +26,6 @@ export class AboutComponent implements OnInit {
       {
         name: 'Jonathan',
         url: jonathan,
-        github: 'https://github.com/Jonathan-YungHsin-Ho',
-        portfolio: 'https://www.jonathan-ho.dev',
         title: 'Full-Stack Software Engineer',
         quote: '"Code with the monitor off for the darkest mode."',
         github: 'https://github.com/Jonathan-YungHsin-Ho',

@@ -1,10 +1,14 @@
-
 <mat-card class="card">
   <mat-card-header>
     <mat-card-title>{{ person.name }} </mat-card-title>
     <mat-card-subtitle>{{ person.title }}</mat-card-subtitle>
   </mat-card-header>
-  <img class="card-image" mat-card-image src="{{ person.url }}" alt="{{ person.name }} Image">
+  <img
+    class="card-image"
+    mat-card-image
+    src="{{ person.url }}"
+    alt="{{ person.name }} Image"
+  />
   <mat-card-content>
     <p>
       {{ person.quote }}

@@ -15,7 +15,6 @@ export class AboutComponent implements OnInit {
     this.team = [
       {
         name: 'Jordan',
-        // url: 'sdjfklsdjf',
         url: jordan,
         title: 'Full Stack Developer',
         quote: 'I love chicken nuggets!',
@@ -26,7 +25,6 @@ export class AboutComponent implements OnInit {
       },
       {
         name: 'Jonathan',
-        // url: 'asdasdas',
         url: jonathan,
         title: 'Full-Stack Software Engineer',
         quote: '"Code with the monitor off for the darkest mode."',

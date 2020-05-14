@@ -1,5 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
+
+
+export interface dataPoint {
+  y: any;
+  name: string;
+}
 @Component({
   selector: 'app-visualization',
   templateUrl: './visualization.component.html',
@@ -26,7 +32,7 @@ export class VisualizationComponent implements OnInit {
   }
 
   createData(): any[] {
-    const datapoints = [
+    const datapoints: dataPoint[] = [
       {
         y: Object.values(this._budget.food).reduce(
           (val: number, cur: number) => cur + val,
@@ -77,6 +83,20 @@ export class VisualizationComponent implements OnInit {
         name: 'Other',
       },
     ];
+    const totalCosts = datapoints.reduce(
+      function(current, dataPoint: dataPoint) {
+        console.log(current);
+        return current + dataPoint.y
+      }
+      , 0);
+    const barpoints = [
+      {
+        y: this._budget.salary, label: "Income"
+      },
+      {
+        y: totalCosts, label: "Costs"
+      }
+    ] 
     return datapoints;
   }
 

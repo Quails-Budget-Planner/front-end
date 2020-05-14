@@ -10,4 +10,20 @@
       {{ person.quote }}
     </p>
   </mat-card-content>
+  <mat-card-actions>
+    <a href="{{ person.portfolio }}">
+      <button mat-button>
+        <mat-icon>
+          portrait
+        </mat-icon>
+      </button>
+    </a>
+    <a href="{{ person.github }}">
+      <button mat-button>        
+        <mat-icon>
+          share
+        </mat-icon>
+      </button>
+    </a>
+  </mat-card-actions>
 </mat-card>

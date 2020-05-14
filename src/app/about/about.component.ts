@@ -15,17 +15,20 @@ export class AboutComponent implements OnInit {
     this.team = [
       {
         name: 'Jordan',
-        // url: 'sdjfklsdjf',
         url: jordan,
         title: 'Full Stack Developer',
         quote: 'I love chicken nuggets!',
+        github: 'https://github.com/jordandoan',
+        portfolio: 'https://jordan-doan.com'
       },
       {
         name: 'Jonathan',
-        // url: 'asdasdas',
         url: jonathan,
         title: 'Full Stack Developer',
         quote: 'Big Papa Ho',
+        github: 'https://github.com/Jonathan-YungHsin-Ho',
+        // portfolio: 'https://google.com',
+        portfolio: 'https://www.jonathan-ho.dev'
       },
     ];
 

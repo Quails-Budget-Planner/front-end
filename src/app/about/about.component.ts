@@ -19,7 +19,9 @@ export class AboutComponent implements OnInit {
         title: 'Full Stack Developer',
         quote: 'I love chicken nuggets!',
         github: 'https://github.com/jordandoan',
-        portfolio: 'https://jordan-doan.com'
+        linkedin: 'https://www.linkedin.com/in/jordan-doan',
+        portfolio: 'https://jordan-doan.com/',
+        twitter: '',
       },
       {
         name: 'Jonathan',
@@ -28,6 +30,10 @@ export class AboutComponent implements OnInit {
         portfolio: 'https://www.jonathan-ho.dev',
         title: 'Full-Stack Software Engineer',
         quote: '"Code with the monitor off for the darkest mode."',
+        github: 'https://github.com/Jonathan-YungHsin-Ho',
+        linkedin: 'https://www.linkedin.com/in/jonathan-y-ho/',
+        portfolio: 'https://www.jonathan-ho.dev/',
+        twitter: 'https://twitter.com/JonathanHoDev',
       },
     ];
   }

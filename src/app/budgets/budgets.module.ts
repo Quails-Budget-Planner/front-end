@@ -4,7 +4,7 @@ import { RouterModule } from '@angular/router';
 import { CoreModule } from '../core/core.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BudgetComponent, SnackBarComponent } from './budget/budget.component';
@@ -35,7 +35,7 @@ const routes = [
     CoreModule,
     MatSnackBarModule,
     MatDialogModule,
-    MatTabsModule,
+    MatExpansionModule,
   ],
   exports: [RouterModule],
 })

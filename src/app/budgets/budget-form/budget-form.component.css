@@ -5,8 +5,8 @@
 }
 
 .form section {
-  min-width: 150px;
-  max-width: 500px;
+  min-width: 300px;
+  /* max-width: 500px; */
   width: 100%;
 
   display: flex;

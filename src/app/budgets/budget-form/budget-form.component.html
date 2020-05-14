@@ -1,16 +1,19 @@
 <div class="form">
-  <mat-tab-group>
-    <mat-tab label="Main">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Main
+        </mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Main</h3>
-
         <mat-form-field>
           <mat-label>Budget Name</mat-label>
           <input matInput type="text" [(ngModel)]="budget.name" required />
         </mat-form-field>
 
         <mat-form-field>
-          <mat-label>Salary</mat-label>
+          <mat-label>Annual Salary</mat-label>
           <input matInput type="number" [(ngModel)]="budget.salary" />
         </mat-form-field>
 
@@ -28,12 +31,13 @@
           />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Housing">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Housing</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Housing</h3>
-
         <mat-form-field>
           <mat-label>Rent/Mortgage</mat-label>
           <input
@@ -52,12 +56,13 @@
           />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Food">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Food</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Food</h3>
-
         <mat-form-field>
           <mat-label>Groceries</mat-label>
           <input matInput type="number" [(ngModel)]="budget.food.groceries" />
@@ -73,12 +78,13 @@
           <input matInput type="number" [(ngModel)]="budget.food.social" />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Medical">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Medical</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Medical</h3>
-
         <mat-form-field>
           <mat-label>Health insurance</mat-label>
           <input
@@ -93,12 +99,13 @@
           <input matInput type="number" [(ngModel)]="budget.medical.expenses" />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Transportation">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Transportation</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Transportation</h3>
-
         <mat-form-field>
           <mat-label>Car Payment</mat-label>
           <input
@@ -153,12 +160,13 @@
           />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Other Expenses">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Other Necessary Expenses</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Other Necessary Expenses</h3>
-
         <mat-form-field>
           <mat-label>Childcare</mat-label>
           <input
@@ -204,12 +212,13 @@
           />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Personal">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Personal Expenses</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Personal Expenses</h3>
-
         <mat-form-field>
           <mat-label>Gym membership/fitness classes</mat-label>
           <input
@@ -273,12 +282,13 @@
           />
         </mat-form-field>
       </section>
-    </mat-tab>
+    </mat-expansion-panel>
 
-    <mat-tab label="Savings">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>Savings</mat-panel-title>
+      </mat-expansion-panel-header>
       <section>
-        <h3>Savings</h3>
-
         <mat-form-field>
           <mat-label>Retirement</mat-label>
           <input
@@ -307,6 +317,6 @@
           <input matInput type="number" [(ngModel)]="budget.savings.misc" />
         </mat-form-field>
       </section>
-    </mat-tab>
-  </mat-tab-group>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>

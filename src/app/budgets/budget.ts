@@ -5,6 +5,8 @@ export interface IBudget {
   salary: number;
   additional_income: number;
   gambling_winnings: number;
+  estimated_tax: number;
+  other_deductions: number;
   housing: {
     rent_or_mortgage: number;
     utilities: number;
@@ -57,6 +59,8 @@ export const emptyBudget = {
   salary: 0,
   additional_income: 0,
   gambling_winnings: 0,
+  estimated_tax: 25,
+  other_deductions: 17,
   housing: {
     rent_or_mortgage: 0,
     utilities: 0,

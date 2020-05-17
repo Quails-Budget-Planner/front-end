@@ -5,3 +5,8 @@
 .below {
   color: red;
 }
+
+th {
+  text-align: left;
+  padding-right: 5px;
+}

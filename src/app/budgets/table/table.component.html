@@ -1,13 +1,15 @@
 <table *ngIf="summary">
   <tr>
     <th>Monthly Income</th>
-    <th>Expenses</th>
-    <th>Extra Spending</th>
+    <td> ${{ summary.income }}</td>
   </tr>
-<tr>
-  <td>{{ summary.income }} </td>
-  <td>{{ summary.expenses }}</td>
-  <td [ngClass]="summary.extra >= 0 ? 'above' : 'below' ">{{ summary.extra }}</td>
-</tr>
+  <tr>
+    <th>Expenses</th>
+    <td> ${{ summary.expenses }}</td>
+  </tr>
+  <tr>
+    <th>Extra Spending</th>
+    <td [ngClass]="summary.extra >= 0 ? 'above' : 'below' ">${{ summary.extra }}</td>
+  </tr>
 </table>
 <div hidden>{{ budget }}</div>

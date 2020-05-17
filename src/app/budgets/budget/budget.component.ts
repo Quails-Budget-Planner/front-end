@@ -18,7 +18,7 @@ export class BudgetComponent implements OnInit, OnChanges {
   isSuccess: boolean = false;
   isError: boolean = false;
   selectedBudget: IBudget;
-
+  summary = null;
   durationInSeconds = 5;
 
   constructor(
@@ -28,6 +28,10 @@ export class BudgetComponent implements OnInit, OnChanges {
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
   ) {}
+
+  receiveSummary(event) {
+    this.summary = event;
+  }
 
   openSnackBar() {
     this._snackBar.openFromComponent(SnackBarComponent, {

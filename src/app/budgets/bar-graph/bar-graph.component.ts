@@ -7,6 +7,7 @@ import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
   styleUrls: ['./bar-graph.component.css']
 })
 export class BarGraphComponent implements OnInit {
+  @Output() summaryCalculated = new EventEmitter<any>();
   @Input() _budget: any = {};
   chart: CanvasJS.Chart;
   constructor() { }
@@ -42,15 +43,16 @@ export class BarGraphComponent implements OnInit {
           (val: number, cur: number) => cur + val,
           0)
       },0)
-    const monthlyCosts = Math.floor(this._budget.salary * 100 / 12) / 100;
+    const monthlyIncome = Math.floor(this._budget.salary * 100 / 12) / 100;
     const barpoints = [
       {
-        y: monthlyCosts, label: "Income"
+        y: monthlyIncome, label: "Income"
       },
       {
         y: totalCosts, label: "Costs"
       }
-    ]
+    ];
+    this.summaryCalculated.emit({ income: monthlyIncome, expenses: totalCosts, extra: monthlyIncome - totalCosts});
     return barpoints;
   }
 

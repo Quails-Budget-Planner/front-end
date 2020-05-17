@@ -15,8 +15,8 @@
   </div>
   <div class="budget-visuals">
     <app-visualization [budget]="selectedBudget"></app-visualization>
-    <app-bar-graph [budget]="selectedBudget"></app-bar-graph>
+    <app-bar-graph [budget]="selectedBudget" (summaryCalculated)="receiveSummary($event)"></app-bar-graph>
   </div>
-  <app-table [budget]="selectedBudget"></app-table>
+  <app-table [summary]="summary"></app-table>
 
 </div>

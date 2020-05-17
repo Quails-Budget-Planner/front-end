@@ -16,7 +16,7 @@ import { ApiHttpService } from './api-http.service';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { UnAuthGuardService } from './un-auth-guard.service';
 import { LoggedInService } from './logged-in.service';
-
+import {MatTableModule} from '@angular/material/table'; 
 
 const modules = [
   CommonModule,
@@ -30,6 +30,7 @@ const modules = [
   MatCardModule,
   MatDialogModule,
   MatIconModule,
+  MatTableModule
 ]
 @NgModule({
   declarations: [],

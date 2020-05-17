@@ -10,16 +10,13 @@ export class TableComponent implements OnInit {
   @Input() _budget: any = {};
 
   get budget(): any {
-    console.log('hi');
     this.calculateSummary();
     return this._budget;
   }
   @Input() set budget(val: any) {
-    console.log('hi2');
     this._budget = val;
   }
   constructor(private cd: ChangeDetectorRef) { 
-    // this.cd.detectChanges();
   }
 
   calculateSummary() {

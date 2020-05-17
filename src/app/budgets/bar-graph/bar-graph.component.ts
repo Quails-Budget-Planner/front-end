@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
 
 @Component({
@@ -42,16 +42,15 @@ export class BarGraphComponent implements OnInit {
           (val: number, cur: number) => cur + val,
           0)
       },0)
-
+    const monthlyCosts = Math.floor(this._budget.salary * 100 / 12) / 100;
     const barpoints = [
       {
-        y: this._budget.salary/12, label: "Income"
+        y: monthlyCosts, label: "Income"
       },
       {
         y: totalCosts, label: "Costs"
       }
     ]
-
     return barpoints;
   }
 

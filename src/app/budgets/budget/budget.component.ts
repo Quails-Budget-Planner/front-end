@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiHttpService } from 'src/app/core/api-http.service';
 import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from 'src/app/shared/modal/modal.component';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
 import { IBudget } from '../budget';
 
 @Component({
@@ -13,12 +12,11 @@ import { IBudget } from '../budget';
   templateUrl: './budget.component.html',
   styleUrls: ['./budget.component.css'],
 })
-export class BudgetComponent implements OnInit {
+export class BudgetComponent implements OnInit, OnChanges {
   loading: boolean = false;
   complete: boolean = false;
   isSuccess: boolean = false;
   isError: boolean = false;
-
   selectedBudget: IBudget;
 
   durationInSeconds = 5;
@@ -51,6 +49,10 @@ export class BudgetComponent implements OnInit {
     });
   }
 
+  ngOnChanges(): void {
+    console.log('hi');
+  }
+
   ngOnInit(): void {
     this.data.currentBudget.subscribe(
       (budget) => (this.selectedBudget = budget)
@@ -59,6 +61,8 @@ export class BudgetComponent implements OnInit {
       this.selectedBudget = JSON.parse(localStorage.getItem('currentBudget'));
     }
   }
+
+
 
   updateBudget() {
     this.loading = true;
@@ -135,6 +139,7 @@ export class BudgetComponent implements OnInit {
     this.isSuccess = false;
     this.isError = true;
   }
+
 }
 
 @Component({

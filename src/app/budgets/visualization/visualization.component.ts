@@ -85,7 +85,6 @@ export class VisualizationComponent implements OnInit {
     ];
     const totalCosts = datapoints.reduce(
       function(current, dataPoint: dataPoint) {
-        console.log(current);
         return current + dataPoint.y
       }
       , 0);

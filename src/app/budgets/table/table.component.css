@@ -6,7 +6,12 @@
   color: red;
 }
 
-th {
+table {
+  border: 1px solid silver;
   text-align: left;
-  padding-right: 5px;
+}
+
+th,
+td {
+  padding: 15px;
 }

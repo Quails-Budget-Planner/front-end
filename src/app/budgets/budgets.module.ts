@@ -5,6 +5,7 @@ import { CoreModule } from '../core/core.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTableModule } from '@angular/material/table';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BudgetComponent, SnackBarComponent } from './budget/budget.component';
@@ -40,6 +41,7 @@ const routes = [
     MatSnackBarModule,
     MatDialogModule,
     MatExpansionModule,
+    MatTableModule,
   ],
   exports: [RouterModule],
 })

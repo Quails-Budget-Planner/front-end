@@ -8,7 +8,9 @@
     <td> ${{ summary.expenses }}</td>
   </tr>
   <tr>
-    <th>Extra Spending</th>
+    <th>Extra Balance</th>
     <td [ngClass]="summary.extra >= 0 ? 'above' : 'below' ">${{ summary.extra }}</td>
   </tr>
 </table>
+
+

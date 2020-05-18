@@ -4,13 +4,13 @@ import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
 @Component({
   selector: 'app-bar-graph',
   templateUrl: './bar-graph.component.html',
-  styleUrls: ['./bar-graph.component.css']
+  styleUrls: ['./bar-graph.component.css'],
 })
 export class BarGraphComponent implements OnInit {
   @Output() summaryCalculated = new EventEmitter<any>();
   @Input() _budget: any = {};
   chart: CanvasJS.Chart;
-  constructor() { }
+  constructor() {}
 
   get budget(): any {
     this.updateChart();
@@ -35,22 +35,36 @@ export class BarGraphComponent implements OnInit {
       this._budget.housing,
       this._budget.transportation,
       this._budget.savings,
-      this._budget.other_necessary
-    ]
-    const totalCosts = categories.reduce(
-      function(current, category: any) {
-        return current + Object.values(category).reduce(
+      this._budget.other_necessary,
+    ];
+    const totalCosts = categories.reduce(function (current, category: any) {
+      return (
+        current +
+        Object.values(category).reduce(
           (val: number, cur: number) => cur + val,
-          0)
-      },0)
-    const monthlyIncome = Math.floor(this._budget.salary * 100 / 12) / 100;
+          0
+        )
+      );
+    }, 0);
+    const monthlyIncome =
+      Math.floor(
+        (
+          // Tax deduction on salary
+          (1 - (this._budget.estimated_tax + this._budget.other_deductions) / 100) 
+          * (this._budget.salary * 100) + 
+          // Add flat additional income
+          (this._budget.additional_income * 100))  /
+          12
+      ) / 100;
     const barpoints = [
       {
-        y: monthlyIncome, label: "Income"
+        y: monthlyIncome,
+        label: 'Income',
       },
       {
-        y: totalCosts, label: "Costs"
-      }
+        y: totalCosts,
+        label: 'Costs',
+      },
     ];
     this.summaryCalculated.emit({ income: monthlyIncome, expenses: totalCosts, extra: monthlyIncome - totalCosts});
     return barpoints;
@@ -64,16 +78,14 @@ export class BarGraphComponent implements OnInit {
         text: 'Salary vs Income',
       },
       axisY: {
-        title: "Dollars"
+        title: 'Dollars',
       },
       data: [
         {
           type: 'bar',
-
         },
       ],
     });
     this.chart.render();
   }
-
 }

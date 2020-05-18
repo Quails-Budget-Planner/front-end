@@ -2,12 +2,15 @@
   <tr>
     <th>Monthly Income</th>
     <th>Expenses</th>
-    <th>Extra Spending</th>
+    <th>Balance</th>
   </tr>
-<tr>
-  <td>{{ summary.income }} </td>
-  <td>{{ summary.expenses }}</td>
-  <td [ngClass]="summary.extra >= 0 ? 'above' : 'below' ">{{ summary.extra }}</td>
-</tr>
+  <tr>
+    <td>{{ summary.income | currency }}</td>
+    <td>{{ summary.expenses | currency }}</td>
+    <td [ngClass]="summary.extra >= 0 ? 'above' : 'below'">
+      {{ summary.extra | currency }}
+    </td>
+  </tr>
 </table>
+
 <div hidden>{{ budget }}</div>

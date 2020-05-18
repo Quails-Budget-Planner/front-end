@@ -5,3 +5,12 @@
 .below {
   color: red;
 }
+
+table {
+  border: 1px solid silver;
+}
+
+th,
+td {
+  padding: 15px;
+}

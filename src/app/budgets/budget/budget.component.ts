@@ -62,8 +62,6 @@ export class BudgetComponent implements OnInit, OnChanges {
     }
   }
 
-
-
   updateBudget() {
     this.loading = true;
     this.complete = false;
@@ -139,7 +137,6 @@ export class BudgetComponent implements OnInit, OnChanges {
     this.isSuccess = false;
     this.isError = true;
   }
-
 }
 
 @Component({

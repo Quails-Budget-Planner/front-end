@@ -23,4 +23,4 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 # Deployment 
-- Hosted via (AWS S3 Bucket)[http://quails-bucket.s3-website.us-east-2.amazonaws.com/]
+- Hosted via [AWS S3 Bucket](http://quails-bucket.s3-website.us-east-2.amazonaws.com/)

@@ -16,10 +16,24 @@ import { VisualizationComponent } from './visualization/visualization.component'
 import { BarGraphComponent } from './bar-graph/bar-graph.component';
 import { TableComponent } from './table/table.component';
 
+import { AuthGuardService } from '../core/auth-guard.service';
+
 const routes = [
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'budget/:budgetId', component: BudgetComponent },
-  { path: 'createbudget', component: CreateBudgetComponent },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'budget/:budgetId',
+    component: BudgetComponent,
+    canActivate: [AuthGuardService],
+  },
+  {
+    path: 'createbudget',
+    component: CreateBudgetComponent,
+    canActivate: [AuthGuardService],
+  },
 ];
 
 @NgModule({

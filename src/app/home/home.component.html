@@ -18,7 +18,7 @@
     *ngFor="let tile of newTiles; index as i"
     fxFlex.lt-lg="10"
   >
-    <div class="{{ i ? 'text' : 'header'}}" fxFlex="20%" fxFlex.gt-sm="65"> {{ tile.text }}</div>
+    <div class="{{ i ? 'text' : 'header' }}" fxFlex="20%" fxFlex.gt-sm="65"> {{ tile.text }}</div>
     <img fxHide.lt-md="true" fxFlex.gt-sm="30%" fxFlex="2%" [src]="tile.imageURL" />
   </div>
 </div>

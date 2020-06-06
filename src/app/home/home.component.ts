@@ -69,17 +69,17 @@ export class HomeComponent {
   ];
   newTiles = [
     {
-      text: `Hello Lambda student! Need help budgeting now that you're making that sweet sweet coin?`,
+      text: `Hello new hire! Need help budgeting now that you're making that sweet sweet coin?`,
       imageURL: 'assets/images/undraw_Savings_dwkw.png',
     },
     {
-      text: "Making that sweet dev money but not sure where it's all going?",
+      text: "Making some money but not sure where it's all going?",
       imageURL: 'assets/images/undraw_credit_card_payment_12va.png',
     },
     {
       header: '',
       text:
-        'Wanna see your net worth grow rather than disappear into the ISA abyss?',
+        'Wanna see your net worth grow rather than disappear into the abyss?',
       cols: 2,
       rows: 1,
       imageURL: 'assets/images/undraw_investment_data_yfvt.png',

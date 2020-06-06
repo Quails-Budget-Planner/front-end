@@ -1,4 +1,4 @@
-<mat-grid-list cols="3" rowHeight="300px">
+<!-- <mat-grid-list cols="3" rowHeight="300px">
   <mat-grid-tile
     class="tile"
     *ngFor="let tile of tiles"
@@ -9,4 +9,16 @@
     <div class="text">{{ tile.text }}</div>
     <img [src]="tile.imageURL" />
   </mat-grid-tile>
-</mat-grid-list>
+</mat-grid-list> -->
+ <div fxLayout="column wrap">
+  <div class="tile" 
+    fxLayout="column" 
+    fxLayout.gt-sm="{{ i % 2 ? 'row-reverse': 'row' }}" 
+    fxLayoutAlign.gt-sm="space-between"
+    *ngFor="let tile of newTiles; index as i"
+    fxFlex.lt-lg="10"
+  >
+    <div class="{{ i ? 'text' : 'header'}}" fxFlex="20%" fxFlex.gt-sm="65"> {{ tile.text }}</div>
+    <img fxHide.lt-md="true" fxFlex.gt-sm="30%" fxFlex="2%" [src]="tile.imageURL" />
+  </div>
+</div>

@@ -11,3 +11,13 @@
   width: 350px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
   height: 350px;
 }
+
+a {
+  color: white;
+  display: inline-block;
+  margin: 0 1rem 0.5rem 1rem;
+}
+
+a:hover {
+  color: lightcoral;
+}

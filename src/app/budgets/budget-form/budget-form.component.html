@@ -34,14 +34,15 @@
         <mat-form-field>
           <mat-label>Estimated Tax %</mat-label>
           <input matInput type="number" [(ngModel)]="budget.estimated_tax" />
-          <a
-            mat-button
-            color="accent"
-            href="https://smartasset.com/taxes/paycheck-calculator"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Estimate tax % here</a
-          >
+          <div class="tax-estimate-wrapper">
+            <a
+              class="tax-estimate"
+              href="https://smartasset.com/taxes/paycheck-calculator"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Estimate tax % here<mat-icon>open_in_new</mat-icon></a
+            >
+          </div>
         </mat-form-field>
 
         <mat-form-field>

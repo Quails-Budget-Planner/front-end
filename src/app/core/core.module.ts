@@ -16,7 +16,8 @@ import { ApiHttpService } from './api-http.service';
 import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { UnAuthGuardService } from './un-auth-guard.service';
 import { LoggedInService } from './logged-in.service';
-
+import {MatTableModule} from '@angular/material/table'; 
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const modules = [
   CommonModule,
@@ -30,6 +31,8 @@ const modules = [
   MatCardModule,
   MatDialogModule,
   MatIconModule,
+  MatTableModule,
+  FlexLayoutModule
 ]
 @NgModule({
   declarations: [],

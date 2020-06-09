@@ -7,8 +7,14 @@ img {
 .header {
   font-size: 48px;
   text-align: center;
+  margin: auto 0;
 }
 
 .text {
   font-size: 24px;
+  margin: auto 0;
+}
+
+.tile {
+  margin-bottom: 5%;
 }

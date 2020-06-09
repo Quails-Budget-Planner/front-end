@@ -7,6 +7,7 @@ import * as CanvasJS from '../../../assets/scripts/canvasjs.min';
   styleUrls: ['./bar-graph.component.css'],
 })
 export class BarGraphComponent implements OnInit {
+  @Output() summaryCalculated = new EventEmitter<any>();
   @Input() _budget: any = {};
   chart: CanvasJS.Chart;
   constructor() {}
@@ -45,16 +46,19 @@ export class BarGraphComponent implements OnInit {
         )
       );
     }, 0);
-    const monthlyCosts =
+    const monthlyIncome =
       Math.floor(
-        ((1 -
-          (this._budget.estimated_tax + this._budget.other_deductions) / 100) *
-          (this._budget.salary * 100)) /
+        (
+          // Tax deduction on salary
+          (1 - (this._budget.estimated_tax + this._budget.other_deductions) / 100) 
+          * (this._budget.salary * 100) + 
+          // Add flat additional income
+          (this._budget.additional_income * 100))  /
           12
       ) / 100;
     const barpoints = [
       {
-        y: monthlyCosts,
+        y: monthlyIncome,
         label: 'Income',
       },
       {
@@ -62,6 +66,7 @@ export class BarGraphComponent implements OnInit {
         label: 'Costs',
       },
     ];
+    this.summaryCalculated.emit({ income: monthlyIncome, expenses: totalCosts, extra: monthlyIncome - totalCosts});
     return barpoints;
   }
 

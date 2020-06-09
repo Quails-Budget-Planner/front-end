@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiHttpService } from 'src/app/core/api-http.service';
 import { DataService } from '../data.service';
@@ -12,13 +12,13 @@ import { IBudget } from '../budget';
   templateUrl: './budget.component.html',
   styleUrls: ['./budget.component.css'],
 })
-export class BudgetComponent implements OnInit, OnChanges {
+export class BudgetComponent implements OnInit {
   loading: boolean = false;
   complete: boolean = false;
   isSuccess: boolean = false;
   isError: boolean = false;
   selectedBudget: IBudget;
-
+  summary;
   durationInSeconds = 5;
 
   constructor(
@@ -28,6 +28,10 @@ export class BudgetComponent implements OnInit, OnChanges {
     public dialog: MatDialog,
     private _snackBar: MatSnackBar
   ) {}
+
+  receiveSummary(event) {
+    this.summary = event;
+  }
 
   openSnackBar() {
     this._snackBar.openFromComponent(SnackBarComponent, {
@@ -49,9 +53,6 @@ export class BudgetComponent implements OnInit, OnChanges {
     });
   }
 
-  ngOnChanges(): void {
-    console.log('hi');
-  }
 
   ngOnInit(): void {
     this.data.currentBudget.subscribe(

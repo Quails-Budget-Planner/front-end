@@ -2,8 +2,7 @@ import {
   Component,
   OnInit,
   Input,
-  ChangeDetectorRef,
-  ChangeDetectionStrategy,
+
 } from '@angular/core';
 
 @Component({
@@ -12,50 +11,19 @@ import {
   styleUrls: ['./table.component.css'],
 })
 export class TableComponent implements OnInit {
-  summary;
-  @Input() _budget: any = {};
+  @Input() _summary;
 
-  get budget(): any {
-    this.calculateSummary();
-    return this._budget;
+  get summary(): any {
+    return this._summary;
   }
-  @Input() set budget(val: any) {
-    this._budget = val;
-  }
-  constructor(private cd: ChangeDetectorRef) {}
 
-  calculateSummary() {
-    const categories = [
-      this._budget.food,
-      this._budget.personal_expenses,
-      this._budget.medical,
-      this._budget.housing,
-      this._budget.transportation,
-      this._budget.savings,
-      this._budget.other_necessary,
-    ];
-    const expenses = categories.reduce(function (current, category: Object) {
-      return (
-        current +
-        Object.values(category).reduce(
-          (val: number, cur: number) => cur + val,
-          0
-        )
-      );
-    }, 0);
-    const income =
-      Math.floor(
-        ((1 -
-          (this._budget.estimated_tax + this._budget.other_deductions) / 100) *
-          this._budget.salary *
-          100) /
-          12
-      ) / 100;
-    this.summary = { income, expenses, extra: income - expenses };
+  @Input() set summary(val: any) {
+    this._summary = val;
+  }
+
+  constructor() { 
   }
 
   ngOnInit(): void {
-    this.calculateSummary();
-    this.cd.detectChanges();
   }
 }

@@ -6,3 +6,7 @@
   display: block;
   margin: 0 10px;
 }
+
+.button:hover {
+  opacity: 0.9;
+}

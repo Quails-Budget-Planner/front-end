@@ -1,9 +1,13 @@
 .dashboard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .budgets {
   margin-bottom: 30px;
+}
+
+a:hover {
+  opacity: 0.9;
 }

@@ -31,3 +31,8 @@
 .tax-estimate:hover {
   text-decoration: underline;
 }
+
+.container {
+  display: flex;
+}
+

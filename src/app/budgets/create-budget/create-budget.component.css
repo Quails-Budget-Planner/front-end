@@ -5,3 +5,12 @@ button {
 button:hover {
   opacity: 0.9;
 }
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.visuals {
+  width: 40%;
+}

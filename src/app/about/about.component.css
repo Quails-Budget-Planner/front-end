@@ -25,6 +25,7 @@ a:hover {
 }
 
 .more-info {
-  width: 60%;
+  width: 90%;
+  max-width: 72ch;
   margin: auto;
 }

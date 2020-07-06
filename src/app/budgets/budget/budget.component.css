@@ -3,23 +3,15 @@
   justify-content: space-between;
 }
 
-button {
-  margin-right: 10px;
-}
-
 .budget {
   display: flex;
-  /* flex-direction: column; */
   margin-top: 20px;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .budget-visuals {
   display: flex;
-  width: 40%;
-  flex-direction: column;
-}
-
-section {
   width: 300px;
+  flex-direction: column;
 }

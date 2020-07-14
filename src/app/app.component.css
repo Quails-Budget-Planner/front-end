@@ -1,3 +1,14 @@
+.nav-bar {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .nav-bar {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
 .spacer {
   flex: 1 1 auto;
 }
@@ -14,7 +25,7 @@
 }
 
 .container {
-  width: 90%;
-  /* max-width: 900px; */
+  max-width: 1000px;
+  padding: 0 2%;
   margin: 20px auto;
 }

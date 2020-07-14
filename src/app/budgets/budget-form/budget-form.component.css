@@ -2,13 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin-bottom: 50px;
 }
 
 .form section {
-  min-width: 300px;
-  /* max-width: 500px; */
-  width: 100%;
-
   display: flex;
   flex-direction: column;
 }
@@ -35,4 +32,3 @@
 .container {
   display: flex;
 }
-

@@ -10,13 +10,13 @@
   </button>
 </div>
 <div class="budget">
-  <div class="budget-form">
-    <app-budget-form [budget]="selectedBudget"></app-budget-form>
-  </div>
+  <app-budget-form [budget]="selectedBudget"></app-budget-form>
+  <app-table [summary]="summary"></app-table>
   <div class="budget-visuals">
     <app-visualization [budget]="selectedBudget"></app-visualization>
-    <app-bar-graph [budget]="selectedBudget" (summaryCalculated)="receiveSummary($event)"></app-bar-graph>
+    <app-bar-graph
+      [budget]="selectedBudget"
+      (summaryCalculated)="receiveSummary($event)"
+    ></app-bar-graph>
   </div>
-  <app-table [summary]="summary"></app-table>
-
 </div>

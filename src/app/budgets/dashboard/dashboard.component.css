@@ -1,7 +1,12 @@
 .dashboard {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.budgets-wrapper {
+  width: 300px;
+  margin-bottom: 50px;
 }
 
 .budgets {
